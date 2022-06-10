@@ -6,15 +6,13 @@ import throttle from 'lodash.throttle';
     const player = new Player(iframeEl);
     const continuePlayingVideo = JSON.parse(localStorage.getItem(CURRENT_TIME_VIDEO));
 
-
 player.on("timeupdate", throttle(onTimeUpdateVideo, 1000));
     
-if (continuePlayingVideo) {
+if (localStorage.getItem(CURRENT_TIME_VIDEO)) {
   currentTimePlayingVideo();
 }
 
 function onTimeUpdateVideo(e) {
-  console.log(e.seconds);
   localStorage.setItem(CURRENT_TIME_VIDEO, e.seconds);
 }
 
