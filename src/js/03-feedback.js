@@ -16,11 +16,10 @@ if (localStorageValue) {
   textareaEl.value = inputValue.message;
 }
 
-function onChangeInputValueClick(e) {
+function onChangeInputValueClick() {
   localStorage.setItem(FORM_VALUE, JSON.stringify({
-    email: `${e.currentTarget.elements.email.value}`,
-    message: `${e.currentTarget.elements.message.value}`
-  }));
+  email: event.currentTarget.elements.email.value,
+  message: event.currentTarget.elements.message.value}));
 }
 
 function onFormSubmit(e) {
@@ -31,7 +30,7 @@ function onFormSubmit(e) {
 
 function parseLocalStorageValue() {
   try {
-return JSON.parse(localStorageValue);
+return  JSON.parse(localStorageValue);
 } catch (error) {
 }
 }
