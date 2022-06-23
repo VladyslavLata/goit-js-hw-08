@@ -33,10 +33,8 @@ function insertData(formData) {
 }
 
 function onFormSubmit(e) {
-  if (formEl.email.value.length.trim() > 0) {
-    e.preventDefault();
-    e.currentTarget.reset();
-    localStorage.removeItem(FORM_VALUE);
-    formData = {};
-  }
+  e.preventDefault();
+  e.currentTarget.reset();
+  localStorage.removeItem(FORM_VALUE);
+  formData = {};
 }
