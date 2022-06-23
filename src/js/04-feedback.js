@@ -1,9 +1,9 @@
 import throttle from 'lodash.throttle';
 
-const FORM_VALUE = 'feedback-form-state';
+const FORM_VALUE = 'feedback-form-state-throttle-0';
 let formData = {};
 const formEl = document.querySelector('.feedback-form');
-formEl.addEventListener('input', throttle(onChangeInputValueClick, 500));
+formEl.addEventListener('input', throttle(onChangeInputValueClick, 0));
 formEl.addEventListener('submit', onFormSubmit);
 
 parseLocalStorageValue();
