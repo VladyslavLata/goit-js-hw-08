@@ -8,7 +8,7 @@ formEl.addEventListener('submit', onFormSubmit);
 
 parseLocalStorageValue();
 
-function onChangeInputValueClick() {
+function onChangeInputValueClick(event) {
   formData[event.target.name] = event.target.value;
   localStorage.setItem(FORM_VALUE, JSON.stringify(formData));
 }
